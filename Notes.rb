@@ -7,7 +7,8 @@
 # cli is under lib and project handler its getting the info from the user and giving them choices, all printing is done here.
 # cli is for user input and output
 
-# api is under lib and project handler name folder
+# api file is under lib and project handler name folder
+# api file does the scraping or getting from api
 
 # data file is under lib and project handler name folder
 
