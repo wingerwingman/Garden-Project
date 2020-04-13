@@ -20,7 +20,9 @@ class Api
         uri = URI.parse(url)
         response = Net::HTTP.get_response(uri)
         plants_objects = JSON.parse(response.body)
-            print plants_objects[number]["name"] + plants_objects[number]["description"] + plants_objects[number]["optimal_sun"] + plants_objects[number]["optimal_soil"] + plants_objects[number]["planting_considerations"] + plants_objects[number]["when_to_plant"] + plants_objects[number]["growing_from_seed"] + plants_objects[number]["transplanting"] + plants_objects[number]["spacing"] + plants_objects[number]["watering"] + plants_objects[number]["feeding"] + plants_objects[number]["other_care"] + plants_objects[number]["diseases"] + plants_objects[number]["pests"] + plants_objects[number]["harvesting"] + plants_objects[number]["storage_use"]
+            puts plants_objects[number]["name"] + plants_objects[number]["description"] + plants_objects[number]["optimal_sun"] + plants_objects[number]["optimal_soil"] + plants_objects[number]["planting_considerations"] + plants_objects[number]["when_to_plant"] + plants_objects[number]["growing_from_seed"] + plants_objects[number]["transplanting"] + plants_objects[number]["spacing"] + plants_objects[number]["watering"] + plants_objects[number]["feeding"] + plants_objects[number]["other_care"] + plants_objects[number]["diseases"] + plants_objects[number]["harvesting"] + plants_objects[number]["storage_use"]
   
     end
 end
+
+# plants_objects[number]["pests"] 
