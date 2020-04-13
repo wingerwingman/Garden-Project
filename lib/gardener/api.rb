@@ -10,17 +10,18 @@ class Api
         uri = URI.parse(url)
         response = Net::HTTP.get_response(uri)
         plants_object = JSON.parse(response.body)
-        plants_object.collect do |plants|
-            plants["name"] 
+        plants_object.each.with_index(1) do |plants, index|
+            puts "#{index} " + plants["name"]
         end
     end
 
-    def self.get_information(info)
+    def self.get_information(number:)
         url = "http://harvesthelper.herokuapp.com/api/v1/plants?api_key=2e7da5303df06d151a7aeb1d403aa7b2"
         uri = URI.parse(url)
         response = Net::HTTP.get_response(uri)
-        plants_object = JSON.parse(response.body)
-        plants_object.collect do |plants|
+        plants_objects = JSON.parse(response.body)
+        binding.pry
+        plants_objects.map.name do |plants|
             plants["name"] 
             plants["description"]
             plants["optimal_sun"]

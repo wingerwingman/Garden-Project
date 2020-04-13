@@ -1,10 +1,10 @@
 class Plant
-  attr_accessor :name, :plant_id
+  attr_accessor :name, :number
   @@all = []
   
-  def initialize(name:, plant_id)
+  def initialize(name:, number:)
     @name = name 
-    @drink_id = drink_id 
+    @number = number
     @@all << self
   end
 
@@ -12,8 +12,9 @@ class Plant
     @@all
   end
 
-  def self.find_by_name(name)
+  def self.find_by_name(number:)
     @@all.select {|n| n.name == name}
+    # binding.pry
   end
 
 

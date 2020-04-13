@@ -1,18 +1,22 @@
 class Cli
-    attr_accessor :plants 
+    attr_accessor :plants, :number
 
     def run
-      binding.pry
+    #   binding.pry
       puts " "
       puts "Welcome to the plant information program"
       puts " "
-      puts "Type list for a list of plants."
+      puts "Type list for a list of plants, or plant number"
       puts " "
       input = gets.strip.downcase.capitalize
       prompt
+    #   binding.pry
       while input != 'Exit'
       if input == "List"
         plants_name(plants)
+      elsif input.to_i == Plant.find_by_name(@number).length
+        puts Api.get_information(@plants)
+
       else 
         puts " "
         puts "I do not understand - trya again"
@@ -29,9 +33,9 @@ def plants_name(plants)
     puts " "
     puts "Here all the plants you can choose from."
     puts " " 
-    puts Api.get_plants(@plants)
+    Api.get_plants(@plants)
 
-   end
+end
 
    def prompt 
     puts " "
