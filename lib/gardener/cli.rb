@@ -2,15 +2,14 @@ class Cli
     attr_accessor :plants, :number
 
     def run
-    #   binding.pry
       puts " "
       puts "Welcome to the plant information program"
       puts " "
       puts "Type list for a list of plants, or plant number"
       puts " "
+    #   binding.pry
       input = gets.strip.downcase.capitalize
       prompt
-    #   binding.pry
       while input != 'Exit'
       if input == "List"
         plants_name(plants)
