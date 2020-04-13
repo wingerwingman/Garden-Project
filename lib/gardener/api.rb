@@ -15,27 +15,12 @@ class Api
         end
     end
 
-    def self.get_information(number:)
+    def self.get_information(number)
         url = "http://harvesthelper.herokuapp.com/api/v1/plants?api_key=2e7da5303df06d151a7aeb1d403aa7b2"
         uri = URI.parse(url)
         response = Net::HTTP.get_response(uri)
         plants_objects = JSON.parse(response.body)
-            plants_objects[number]["name"] 
-            plants_objects[number]["description"]
-            plants_objects[number]["optimal_sun"]
-            plants_objects[number]["optimal_soil"]
-            plants_objects[number]["planting_considerations"]
-            plants_objects[number]["when_to_plant"]
-            plants_objects[number]["growing_from_seed"]
-            plants_objects[number]["transplanting"]
-            plants_objects[number]["spacing"]
-            plants_objects[number]["watering"]
-            plants_objects[number]["feeding"]
-            plants_objects[number]["other_care"]
-            plants_objects[number]["diseases"]
-            plants_objects[number]["pests"]
-            plants_objects[number]["harvesting"]
-            plants_objects[number]["storage_use"]
+            print plants_objects[number]["name"] + plants_objects[number]["description"] + plants_objects[number]["optimal_sun"] + plants_objects[number]["optimal_soil"] + plants_objects[number]["planting_considerations"] + plants_objects[number]["when_to_plant"] + plants_objects[number]["growing_from_seed"] + plants_objects[number]["transplanting"] + plants_objects[number]["spacing"] + plants_objects[number]["watering"] + plants_objects[number]["feeding"] + plants_objects[number]["other_care"] + plants_objects[number]["diseases"] + plants_objects[number]["pests"] + plants_objects[number]["harvesting"] + plants_objects[number]["storage_use"]
   
     end
 end

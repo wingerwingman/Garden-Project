@@ -12,9 +12,8 @@ class Plant
     @@all
   end
 
-  def self.find_by_name(number:)
-    binding.pry
-    @@all.select {|n| n.name == name}
+  def self.find_by_name(number)
+    @@all.detect {|n| n.name == name}
   end
 
 

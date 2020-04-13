@@ -7,18 +7,18 @@ class Cli
       puts " "
       puts "Type list for a list of plants, or plant number"
       puts " "
-    #   binding.pry
       input = gets.strip.downcase.capitalize
       prompt
       while input != 'Exit'
       if input == "List"
         plants_name(plants)
-      elsif input.to_i == Plant.find_by_name(@number).length
-        puts Api.get_information(@plants)
+        binding.pry
+      elsif input.to_i > 0 && input.to_i <= Plant.find_by_name(input).length
+        Api.get_information(input - 1)
 
       else 
         puts " "
-        puts "I do not understand - trya again"
+        puts "I do not understand - try again"
         puts " "
       end
       prompt
