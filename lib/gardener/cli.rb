@@ -2,7 +2,7 @@ class Cli
     attr_accessor :plants 
 
     def run
-
+      binding.pry
       puts " "
       puts "Welcome to the plant information program"
       puts " "

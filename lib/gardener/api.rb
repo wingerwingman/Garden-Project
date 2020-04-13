@@ -37,7 +37,7 @@ class Api
             plants["pests"]
             plants["harvesting"]
             plants["storage_use"]
-            plants["image_url"]
+            # plants["image_url"]
         end
 
         
