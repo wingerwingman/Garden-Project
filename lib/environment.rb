@@ -1,7 +1,7 @@
 require 'pry'
-# require 'HTTParty'
-require 'net/http'
 require 'json'
+require 'open-uri'
+require 'net/http'
 
 require_relative './gardener/cli'
 require_relative './gardener/api'
