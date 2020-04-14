@@ -16,7 +16,6 @@ class Cli
       elsif input.to_i > 0 && input.to_i <= 45
         number = input.to_i - 1
         plant = Plant.all[number]
-        # binding.pry
         puts Plant.all[number].name + ":\n" + Api.get_information(number) if !Plant.all[number].description
         puts Plant.all[number].description
         prompt2
@@ -47,14 +46,14 @@ class Cli
       end
     puts " "
     puts "Good bye!"
+    puts " "
 end
 
 def plants_name(plants)
     puts " "
-    puts "Here all the plants you can choose from." 
-    # binding.pry
     Plant.all.each.with_index(1) do |p, index|
-     puts "#{index} #{p.name}"
+    puts "#{index} #{p.name}"
+    puts " "
     end
 end
 
