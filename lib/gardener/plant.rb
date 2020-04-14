@@ -1,5 +1,5 @@
 class Plant
-  attr_accessor :name
+  attr_accessor :name, :instructions, :description
   @@all = []
   
   def initialize(name)
