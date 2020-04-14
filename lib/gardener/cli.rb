@@ -33,8 +33,7 @@ class Cli
                 puts "-------------------------------"
                 puts "I do not understand - try again"
                 puts "-------------------------------"
-            else
-               
+            else            
                 puts "I do not understand - try again"
                 puts "-------------------------------"
               input = gets.strip.downcase
