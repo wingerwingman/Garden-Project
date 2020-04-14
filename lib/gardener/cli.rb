@@ -17,6 +17,18 @@ class Cli
         number = input.to_i - 1
         plant = Plant.all[number]
         puts Plant.all[number].name + ":\n" + Api.get_information(number)
+        prompt2
+        input = gets.strip.downcase
+        while input != "exit"
+            if input == "instructions"
+                puts Api.get_instructions(number)
+            end
+            else 
+                puts " "
+                puts "I do not understand - try again"
+                puts " "
+            end
+        end
       else 
         puts " "
         puts "I do not understand - try again"
@@ -47,7 +59,12 @@ def prompt
     puts " "
     puts "Select a plant name to list the plants information, or type list to get a list of the plants."
     puts " "
-    # binding.pry
+end
+
+def prompt2
+    puts " "
+    puts "Type exit to leave this plant or type instructions to view gardening instructions."
+    puts " "
 end
 
 
