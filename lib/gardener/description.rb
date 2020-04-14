@@ -1,9 +1,9 @@
-# class Instruction
-#     attr_accessor :instructions
+# class Description
+#     attr_accessor :descriptions
 #     @@all = []
     
-#     def initialize(instructions)
-#       @instructions = instructions
+#     def initialize(descriptions)
+#       @descriptions = descriptions
 #       @@all << self
 #     end
   
