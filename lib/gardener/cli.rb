@@ -18,13 +18,15 @@ class Cli
       elsif input.to_i > 0 && input.to_i <= 45
         number = input.to_i - 1
         plant = Plant.all[number]
-        binding.pry
-        puts Plant.all[number].name + ":\n" + Api.get_information(number) if !Plant[number].information
+        # binding.pry
+        puts Plant.all[number].name + ":\n" + Api.get_information(number) if !Plant.all[number].description
+        puts Plant.all[number].description
         prompt2
         input = gets.strip.downcase
           while input != "end"
             if input == "instructions"
-            puts Api.get_instructions(number) if !Plant[number].instructions
+            puts Api.get_instructions(number) if !Plant.all[number].instructions
+            puts Plant.all[number].instructions
             prompt2
             input = gets.strip.downcase
             elsif 

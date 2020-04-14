@@ -22,8 +22,8 @@ class Api
         response = Net::HTTP.get_response(uri)
         plants_objects = JSON.parse(response.body)
         # binding.pry
-        Plant[plant].description = plants_objects[plant]["description"]
-        Plant[plant].description
+        Plant.all[plant].description = plants_objects[plant]["description"]
+        Plant.all[plant].description
   
     end
 
@@ -32,8 +32,8 @@ class Api
         uri = URI.parse(url)
         response = Net::HTTP.get_response(uri)
         plants_objects = JSON.parse(response.body)
-        Plant[plant].instructions = plants_objects[plant]["optimal_sun"] + plants_objects[plant]["optimal_soil"] + plants_objects[plant]["planting_considerations"] + plants_objects[plant]["when_to_plant"] + plants_objects[plant]["growing_from_seed"] + plants_objects[plant]["transplanting"] + plants_objects[plant]["spacing"] + plants_objects[plant]["watering"] + plants_objects[plant]["feeding"] + plants_objects[plant]["other_care"] + plants_objects[plant]["diseases"] + plants_objects[plant]["harvesting"] + plants_objects[plant]["storage_use"]
-        Plant[plant].instructions
+        Plant.all[plant].instructions = plants_objects[plant]["optimal_sun"] + plants_objects[plant]["optimal_soil"] + plants_objects[plant]["planting_considerations"] + plants_objects[plant]["when_to_plant"] + plants_objects[plant]["growing_from_seed"] + plants_objects[plant]["transplanting"] + plants_objects[plant]["spacing"] + plants_objects[plant]["watering"] + plants_objects[plant]["feeding"] + plants_objects[plant]["other_care"] + plants_objects[plant]["diseases"] + plants_objects[plant]["harvesting"] + plants_objects[plant]["storage_use"]
+        Plant.all[plant].instructions
     end
 end
 
