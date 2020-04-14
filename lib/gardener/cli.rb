@@ -30,20 +30,20 @@ class Cli
             prompt2
             input = gets.strip.downcase
             elsif 
-              puts " "
-              puts "I do not understand - try again"
-              puts " "
+                puts "-------------------------------"
+                puts "I do not understand - try again"
+                puts "-------------------------------"
             else
-              puts " "
-              puts "I do not understand - try again"
-              puts " "
+               
+                puts "I do not understand - try again"
+                puts "-------------------------------"
               input = gets.strip.downcase
             end
         end
       else 
-        puts " "
+        puts "-------------------------------"
         puts "I do not understand - try again"
-        puts " "
+        puts "-------------------------------"
       end
       prompt
       input = gets.strip.downcase
