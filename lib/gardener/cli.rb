@@ -8,23 +8,22 @@ class Cli
       puts " "
       puts "Type list for a list of plants, or plant number"
       puts " "
-      input = gets.strip.downcase.capitalize
+      input = gets.strip.downcase
       prompt
-      while input != 'Exit'
-      if input == "List"
-        plants_name(plant)
-      elsif input.to_i > 0 && input.to_i <= Plant.find_by_name(input)
+      while input != 'exit'
+      if input == "list"
+        plants_name(Plant)
+      elsif input.to_i > 0 && input.to_i <= 45
         number = input.to_i - 1
         plant = Plant.all[number]
-        Api.get_information(plant)
-
+        puts Plant.all[number].name + ":\n" + Api.get_information(number)
       else 
         puts " "
         puts "I do not understand - try again"
         puts " "
       end
       prompt
-      input = gets.strip.downcase.capitalize
+      input = gets.strip.downcase
       end
     puts " "
     puts "Good bye"
@@ -32,14 +31,17 @@ end
 
 def plants_name(plants)
     puts " "
-    puts "Here all the plants you can choose from."
-    puts " "  
-    puts Plant.all
+    puts "Here all the plants you can choose from." 
+    # binding.pry
+    Plant.all.each.with_index(1) do |p, index|
+     puts "#{index} #{p.name}"
+    end
 
 end
 
-def print_plant(plant)
-end
+# def print_plant(number)
+
+# end
 
 def prompt 
     puts " "
