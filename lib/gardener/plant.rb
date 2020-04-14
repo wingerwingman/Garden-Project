@@ -1,11 +1,9 @@
 class Plant
-  attr_accessor :name, :number
+  attr_accessor :name
   @@all = []
   
-  def initialize(name, number)
-    @number = number
-    # Api.get_information(number -1)
-    Api.get_plants(plants)
+  def initialize(name)
+    @name = name
     @@all << self
   end
 

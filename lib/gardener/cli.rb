@@ -1,7 +1,8 @@
 class Cli
-    attr_accessor :plants, :number
 
     def run
+      Api.get_plants
+    
       puts " "
       puts "Welcome to the plant information program"
       puts " "
@@ -11,12 +12,12 @@ class Cli
       prompt
       while input != 'Exit'
       if input == "List"
-        plants_name(plants)
+        Plant.all
         # binding.pry
       elsif input.to_i > 0 && input.to_i <= Plant.find_by_name(input)
-        @number = input.to_i
-        plant
-        # Api.get_information(input - 1)
+        number = input.to_i - 1
+        plant = Plant.all[number]
+        Api.get_information(plant)
 
       else 
         puts " "
@@ -34,7 +35,6 @@ def plants_name(plants)
     puts " "
     puts "Here all the plants you can choose from."
     puts " " 
-    Api.get_plants(@plants)
 
 end
 

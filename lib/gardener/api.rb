@@ -5,14 +5,15 @@ class Api
     # "http://harvesthelper.herokuapp.com/api/v1/plants?api_key=2e7da5303df06d151a7aeb1d403aa7b2"
 
 
-    def self.get_plants(plants) 
+    def self.get_plants
         url = "http://harvesthelper.herokuapp.com/api/v1/plants?api_key=2e7da5303df06d151a7aeb1d403aa7b2"
         uri = URI.parse(url)
         response = Net::HTTP.get_response(uri)
         plants_object = JSON.parse(response.body)
-        plants_object.each.with_index(1) do |plants, index|
-            puts "#{index} " + plants["name"]
+        plants_object.each do |p|
+            Plant.new(p["name"])
         end
+        # binding.pry
     end
 
     def self.get_information(number)
