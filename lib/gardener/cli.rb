@@ -12,8 +12,7 @@ class Cli
       prompt
       while input != 'Exit'
       if input == "List"
-        Plant.all
-        # binding.pry
+        plants_name(plant)
       elsif input.to_i > 0 && input.to_i <= Plant.find_by_name(input)
         number = input.to_i - 1
         plant = Plant.all[number]
@@ -34,14 +33,23 @@ end
 def plants_name(plants)
     puts " "
     puts "Here all the plants you can choose from."
-    puts " " 
+    puts " "  
+    puts Plant.all
 
 end
 
-   def prompt 
+def print_plant(plant)
+end
+
+def prompt 
     puts " "
     puts "Select a plant name to list the plants information, or type list to get a list of the plants."
     puts " "
-   end
+    # binding.pry
+end
+
+
 
 end
+
+
