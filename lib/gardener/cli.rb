@@ -22,11 +22,13 @@ class Cli
         while input != "exit"
             if input == "instructions"
                 puts Api.get_instructions(number)
-            end
-            else 
+                prompt2
+            elsif
                 puts " "
                 puts "I do not understand - try again"
                 puts " "
+            else
+                prompt
             end
         end
       else 
