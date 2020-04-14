@@ -4,9 +4,9 @@ class Cli
       Api.get_plants
     
       puts " "
-      puts "Welcome to the plant information program"
+      puts "Welcome to the plant information program."
       puts " "
-      puts "Type list for a list of plants, or plant number"
+      puts "Type list for a list of plants, or plant number."
       puts " "
       input = gets.strip.downcase
       prompt
@@ -29,24 +29,24 @@ class Cli
             input = gets.strip.downcase
             elsif 
                 puts "-------------------------------"
-                puts "I do not understand - try again"
+                puts "I do not understand - try again!"
                 puts "-------------------------------"
             else            
-                puts "I do not understand - try again"
+                puts "I do not understand - try again!"
                 puts "-------------------------------"
               input = gets.strip.downcase
             end
         end
       else 
         puts "-------------------------------"
-        puts "I do not understand - try again"
+        puts "I do not understand - try again!"
         puts "-------------------------------"
       end
       prompt
       input = gets.strip.downcase
       end
     puts " "
-    puts "Good bye"
+    puts "Good bye!"
 end
 
 def plants_name(plants)
