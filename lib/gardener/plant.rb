@@ -2,9 +2,10 @@ class Plant
   attr_accessor :name, :number
   @@all = []
   
-  def initialize(name:, number:)
-    @name = name 
+  def initialize(name, number)
     @number = number
+    # Api.get_information(number -1)
+    Api.get_plants(plants)
     @@all << self
   end
 
@@ -13,7 +14,7 @@ class Plant
   end
 
   def self.find_by_name(number)
-    @@all.detect {|n| n.name == name}
+    @@all.find {|n| n.name == name}
   end
 
 

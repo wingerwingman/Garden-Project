@@ -12,9 +12,11 @@ class Cli
       while input != 'Exit'
       if input == "List"
         plants_name(plants)
-        binding.pry
-      elsif input.to_i > 0 && input.to_i <= Plant.find_by_name(input).length
-        Api.get_information(input - 1)
+        # binding.pry
+      elsif input.to_i > 0 && input.to_i <= Plant.find_by_name(input)
+        @number = input.to_i
+        plant
+        # Api.get_information(input - 1)
 
       else 
         puts " "
