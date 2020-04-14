@@ -2,6 +2,8 @@ class Cli
 
     def run
       Api.get_plants
+    #   Api.get_information
+    #   Api.get_instructions
     
       puts " "
       puts "Welcome to the plant information program"
@@ -54,6 +56,15 @@ def plants_name(plants)
     Plant.all.each.with_index(1) do |p, index|
      puts "#{index} #{p.name}"
     end
+
+def plant_info(number)
+        
+end
+
+
+def plant_instruction(number)
+
+end
 
 end
 

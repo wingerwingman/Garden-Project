@@ -15,6 +15,4 @@ class Plant
     @@all.find {|n| n.name == name}
     # binding.pry
   end
-
-
 end
