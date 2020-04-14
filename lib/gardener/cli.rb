@@ -19,18 +19,17 @@ class Cli
         puts Plant.all[number].name + ":\n" + Api.get_information(number)
         prompt2
         input = gets.strip.downcase
-        while input != "exit"
-            if input == "instructions"
-                puts Api.get_instructions(number)
-                prompt2
-            elsif
-                puts " "
-                puts "I do not understand - try again"
-                puts " "
-            else
-                prompt
-            end
-        end
+      elsif input == "instructions"
+          puts Api.get_instructions(number)
+          input = "end"
+          prompt
+          input = gets.strip.downcase
+      elsif
+          puts " "
+          puts "I do not understand - try again"
+          puts " "
+      elsif
+          prompt
       else 
         puts " "
         puts "I do not understand - try again"
@@ -65,7 +64,7 @@ end
 
 def prompt2
     puts " "
-    puts "Type exit to leave this plant or type instructions to view gardening instructions."
+    puts "Type end to leave this plant or type instructions to view gardening instructions."
     puts " "
 end
 
