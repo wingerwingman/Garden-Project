@@ -13,7 +13,7 @@ class Cli
       while input != 'exit'
       if input == "list"
         plants_name(Plant)
-      elsif input.to_i > 0 && input.to_i <= 45
+      elsif input.to_i > 0 && input.to_i <= Plant.all.length
         number = input.to_i - 1
         plant = Plant.all[number]
         puts Plant.all[number].name + ":\n" + Api.get_information(number) if !Plant.all[number].description
