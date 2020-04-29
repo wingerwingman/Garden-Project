@@ -5,6 +5,7 @@ class Api
         response = Net::HTTP.get_response(uri)
         plants_object = JSON.parse(response.body)
         plants_object.each do |p|
+            # binding.pry
             Plant.new(p["name"])
         end
         # binding.pry

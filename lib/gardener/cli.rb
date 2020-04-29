@@ -2,7 +2,6 @@ class Cli
 
     def run
       Api.get_plants
-    
       puts " "
       puts "Welcome to the plant information program, where you can get information on the most commonly grown garden plants and instructions on how to grow them."
       puts " "
@@ -10,42 +9,53 @@ class Cli
       puts " "
       input = gets.strip.downcase
       prompt
-      while input != 'exit'
-      if input == "list"
-        plants_name(Plant)
-      elsif input.to_i > 0 && input.to_i <= Plant.all.length
-        number = input.to_i - 1
-        plant = Plant.all[number]
-        puts Plant.all[number].name + ":\n" + Api.get_information(number) if !Plant.all[number].description
-        puts Plant.all[number].description
-        prompt2
-        input = gets.strip.downcase
-        while input != "end"
-            if input == "instructions"
-                puts Api.get_instructions(number) if !Plant.all[number].instructions
-                puts Plant.all[number].instructions
-            else
-                puts "-------------------------------"
-                puts "I do not understand - try again!"
-                puts "-------------------------------"
-            end
-            prompt2
-            input = gets.strip.downcase
-        end
-      else 
-        puts "-------------------------------"
-        puts "I do not understand - try again!"
-        puts "-------------------------------"
-      end
-      prompt
-      input = gets.strip.downcase
-      end
+      plants_loop(input)
     puts " "
     puts "Good bye!"
     puts " "
+    
 end
 
-def plants_name(plants)
+def plants_loop(input)
+  while input != 'exit'
+    if input == "list"
+      plants_name
+    elsif input.to_i > 0 && input.to_i <= Plant.all.length
+      number = input.to_i - 1
+      plant = Plant.all[number]
+      # puts plant.name + ":\n" 
+      Api.get_information(number) if !plant.description
+      puts plant.name_and_description
+      # puts plant.description
+      instructions_loop(plant, number)
+    else
+      puts "-------------------------------"
+      puts "I do not understand - try again!"
+      puts "-------------------------------"
+    end
+    prompt
+    input = gets.strip.downcase
+    end
+end
+
+def instructions_loop(plant, number)
+  prompt2
+      input = gets.strip.downcase
+      while input != "end"
+          if input == "instructions"
+              Api.get_instructions(number) if !plant.instructions
+              puts plant.instructions
+          else
+              puts "-------------------------------"
+              puts "I do not understand - try again!"
+              puts "-------------------------------"
+          end
+          prompt2
+          input = gets.strip.downcase
+      end
+  end
+
+def plants_name
     puts " "
     Plant.all.each.with_index(1) do |p, index|
     puts "#{index} #{p.name}"

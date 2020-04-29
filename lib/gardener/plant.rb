@@ -11,7 +11,8 @@ class Plant
     @@all
   end
 
-  def self.find_by_name(number)
-    @@all.find {|n| n.name == name}
+  def name_and_description
+    self.name + ":\n" + self.description
   end
+
 end
